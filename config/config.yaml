@@ -1,0 +1,54 @@
+'''
+instead of saving data in root folder, we will create artifacts
+inside that create data_ingestion, inside it download zipped version of the file
+then to be unzipped 
+succesfully ingested
+
+'''
+
+artifacts_root: artifacts
+# key : value
+
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source_URL: https://github.com/SetuAI/mlpipeline-example/raw/refs/heads/main/data.zip
+  local_data_file: artifacts/data_ingestion/data.zip
+  unzip_dir: artifacts/data_ingestion
+
+"in SOURCE_URL : you keep the zipped data"
+# when source_url is given, it will download the data from the source_url and save it in local_data_file
+# local_data file : where the data is saved , named as data.zip
+# unzip_dir : where the data will be unzipped
+
+data_validation:
+  root_dir: artifacts/data_validation
+  unzip_data_dir: artifacts/data_ingestion/winequality-red.csv
+  STATUS_FILE: artifacts/data_validation/status.txt
+
+# data validation will check the data is valid or not
+# STATUS_FILE : where the status of the data will be saved
+
+data_transformation:
+  root_dir: artifacts/data_transformation
+  data_path: artifacts/data_ingestion/winequality-red.csv
+
+# data_transformation will take the data from data_ingestion and save it in data_path
+
+model_trainer:
+  root_dir: artifacts/model_trainer
+  train_data_path: artifacts/data_transformation/train.csv
+  test_data_path: artifacts/data_transformation/test.csv
+  model_name: model.joblib
+
+# model_trainer will take, train_data_path and test_data_path and save the model in model_name
+
+model_evaluation:
+  root_dir: artifacts/model_evaluation
+  test_data_path: artifacts/data_transformation/test.csv
+  model_path: artifacts/model_trainer/model.joblib
+  metric_file_name: artifacts/model_evaluation/metrics.json
+
+# model_evaluation will take test_data_path and model_path and save the metrics in metric_file_name
+# metric_file_name : where the metrics will be saved
+# model_path : where the model is saved, model.joblib
