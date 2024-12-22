@@ -1,6 +1,6 @@
 """
 write utility related functions here, some frequenct functions
-say we are using config.yaml , shecmas.yaml, params.yaml, again and again
+say we are using config.yaml , schema.yaml, params.yaml, again and again
 if we constantly want to use these files, we can write a function here,
 we read yaml files using pyyaml lib
 

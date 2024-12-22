@@ -1,13 +1,14 @@
-from src.mlProject import logger
-from src.mlProject.pipeline.stage_01_data_ingestion import DataIngestionTrainingPipeline
+# this is the first pipeline stage
 
-# import configuration manager
-from src.mlProject.config.configuration import ConfigurationManager
+# mention pipeline
 
-# import data ingestion
-from src.mlProject.components.data_ingestion import DataIngestion
+from mlProject.config.configuration import ConfigurationManager
+from mlProject.components.data_ingestion import DataIngestion
+from mlProject import logger
+
 
 STAGE_NAME = "Data Ingestion stage"
+
 
 class DataIngestionTrainingPipeline:
     def __init__(self):
@@ -33,3 +34,5 @@ if __name__ == '__main__':
         logger.exception(e)
         raise e
     
+    # the above code will download the data and extract it in the data directory
+    # this is the first stage of the pipeline, we will have multiple stages in the pipeline
