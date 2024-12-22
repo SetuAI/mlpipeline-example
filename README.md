@@ -66,3 +66,15 @@ update the pipeline (flow of function calling)
 update the main.py (root file to be triggered for executing training pipeline)
 
 update the app.py (frontend part)
+
+
+In Data Transformation stage, we do the train test split operation
+
+Steps in pipeline include:
+1. Data Ingestion
+2. Data Validation
+3. Data Transformation
+4. Model Training
+5. Model Evaluation
+6. Model Deployment
+7. Model Monitoring

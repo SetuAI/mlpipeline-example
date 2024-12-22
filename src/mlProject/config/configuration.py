@@ -37,7 +37,7 @@ class ConfigurationManager:
             source_URL=config.source_URL,
             local_data_file=config.local_data_file,
             unzip_dir=config.unzip_dir 
-        )
+        ) 
 
         return data_ingestion_config
     
@@ -55,5 +55,18 @@ class ConfigurationManager:
             all_schema=schema,
         )
 
-        return data_validation_config
+        return data_validation_config # after this upgrade the components
+    
+    
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        config = self.config.data_transformation
+
+        create_directories([config.root_dir])
+
+        data_transformation_config = DataTransformationConfig(
+            root_dir=config.root_dir,
+            data_path=config.data_path,
+        )
+
+        return data_transformation_config
     
