@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from pathlib import Path
 
-
+# data ingestion entity : modular coding piece
 @dataclass(frozen=True)
 class DataIngestionConfig:
     root_dir: Path
@@ -10,7 +10,7 @@ class DataIngestionConfig:
     unzip_dir: Path
 
 
-
+# data validation entity : modular coding piece
 @dataclass(frozen=True)
 class DataValidationConfig:
     root_dir: Path
