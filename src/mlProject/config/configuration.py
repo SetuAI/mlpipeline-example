@@ -10,9 +10,6 @@ from src.mlProject.entity.config_entity import (DataIngestionConfig,
                                             ModelTrainerConfig,
                                             ModelEvaluationConfig)
 
-
-
-
 class ConfigurationManager:
     def __init__(
         self,
@@ -25,7 +22,11 @@ class ConfigurationManager:
         self.schema = read_yaml(schema_filepath)
 
         create_directories([self.config.artifacts_root])
-
+        
+#  class ConfigurationManager is a class that reads the configuration files and 
+# creates the configuration objects for the different components of the pipeline.
+# self.config = read_yaml(config_filepath) reads the configuration file
+# self.params = read_yaml(params_filepath) reads the parameters file
 
     def get_data_ingestion_config(self) -> DataIngestionConfig:
         config = self.config.data_ingestion
@@ -41,7 +42,12 @@ class ConfigurationManager:
 
         return data_ingestion_config
     
-    
+# get_data_ingestion_config() method returns the DataIngestionConfig object.
+# The method reads the data ingestion configuration from the configurationfile
+# create_directories([config.root_dir]) creates the root directory if it does not exist.
+# and creates the DataIngestionConfig object with the configuration parameters.
+# The DataIngestionConfig object is then returned.
+
     def get_data_validation_config(self) -> DataValidationConfig:
         config = self.config.data_validation
         schema = self.schema.COLUMNS

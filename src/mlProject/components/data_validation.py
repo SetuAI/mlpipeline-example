@@ -32,4 +32,4 @@ class DataValiadtion:
             return validation_status
         
         except Exception as e:
-            raise e
+            raise e # after this update the pipeline

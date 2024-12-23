@@ -49,22 +49,14 @@ raising exception with box exception
 #### project workflows
 #### they need to be updated one after the other
 update config.yaml  (artifacts)
-
 update schema.yaml (column : data type)
-
 update params.yaml (all the parameter changes wrt to algo can be done in params.yaml)
-
 update the entity (check this in data_ingestion.ipynb)
-
 update the configuration manager in src config
 (Inside src,under config we have configuration.py)
-
 update the components
-
 update the pipeline (flow of function calling)
-
 update the main.py (root file to be triggered for executing training pipeline)
-
 update the app.py (frontend part)
 
 

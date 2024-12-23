@@ -6,11 +6,10 @@ from pathlib import Path
 # of the ML pipeline.
 # The configuration classes are dataclasses that store the
 # configuration parameters for each stage of the pipeline.
-# The configuration classes are used to pass the configuration
+# The configuration classes are used to pass the conf iguration
 # parameters to the components of the pipeline.
 # The configuration classes are immutable, meaning that once
 # the configuration parameters are set, they cannot be changed.
-
 
 
 # data ingestion entity : modular coding piece
