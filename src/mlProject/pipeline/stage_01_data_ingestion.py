@@ -22,6 +22,19 @@ class DataIngestionTrainingPipeline:
         data_ingestion.download_file()
         data_ingestion.extract_zip_file()
 
+# class DataIngestionTrainingPipeline , it does not have any constructor, 
+# it has a main function which is used to trigger the pipeline
+# it reads the configuration from the configuration manager and then
+# creates an object of the DataIngestion class and calls the download_file and extract_zip_file functions
+# this will download the data and extract it in the data directory
+
+# config = ConfigurationManager(), it reads the configuration from the configuration manager
+# data_ingestion_config = config.get_data_ingestion_config(), it reads the data ingestion configuration
+# data_ingestion = DataIngestion(config=data_ingestion_config), it creates an object of the DataIngestion class
+# data_ingestion.download_file(), it calls the download_file function of the DataIngestion class
+# data_ingestion.extract_zip_file(), it calls the extract_zip_file function of the DataIngestion class
+
+
 
 if __name__ == '__main__':
     try:
@@ -36,3 +49,9 @@ if __name__ == '__main__':
     
     # the above code will download the data and extract it in the data directory
     # this is the first stage of the pipeline, we will have multiple stages in the pipeline
+    
+    
+# if __name__ == '__main__':, this is the main block of the code
+#  obj = DataIngestionTrainingPipeline(), 
+# it creates an object of the DataIngestionTrainingPipeline class
+# obj.main(), it calls the main function of the DataIngestionTrainingPipeline class
