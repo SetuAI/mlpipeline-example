@@ -139,3 +139,8 @@ def get_size(path: Path) -> str: #get file size
     return f"~ {size_in_kb} KB"
 
 "using create directories we can say create artifacts where we can ingest data"
+
+
+# to add memory downsizing function for reference
+
+# def downsize_memory(df: pd.DataFrame) -> pd.DataFrame:
